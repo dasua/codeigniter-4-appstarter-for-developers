@@ -129,4 +129,4 @@ nb-configuration.xml
 phpstan.neon
 
 # Codeigniter project
-writable
+!writable/.gitkeep
