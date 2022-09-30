@@ -1,0 +1,62 @@
+{
+    "name": "dasua/codeigniter-4-appstarter-for-developers",
+    "type": "project",
+    "description": "CodeIgniter4 starter app for developers",
+    "homepage": "https://github.com/dasua/codeigniter-4-appstarter-for-developers",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "codeigniter4/framework": "^4.0",
+        "codeigniter4/translations": "^4.2"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9",
+        "mikey179/vfsstream": "^1.6",
+        "phpunit/phpunit": "^9.1",
+        "codeigniter4/devkit": "^1.1",
+        "codeigniter/coding-standard": "^1.5"
+    },
+    "suggest": {
+        "ext-fileinfo": "Improves mime type detection for files"
+    },
+    "autoload": {
+        "exclude-from-classmap": [
+            "**/Database/Migrations/**"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Support\\": "tests/_support",
+            "Utils\\": "utils/"
+        }
+    },
+    "scripts": {
+        "analyze": "vendor/bin/phpstan analyze --verbose",
+        "cs": "vendor/bin/php-cs-fixer fix --ansi --verbose --dry-run --diff",
+        "cs-fix": "php-cs-fixer fix --ansi --verbose --diff",
+        "install-git-hooks": [
+            "Utils\\ComposerScripts::installGitHooks"
+        ],
+        "style": "@cs-fix",
+        "test": "vendor/bin/phpunit tests --testdox"
+    },
+    "scripts-descriptions": {
+        "analyze": "Analyses source code",
+        "cs": "Check the coding style",
+        "cs-fix": "Fix the coding style",
+        "install-git-hooks": "Install git hooks",
+        "style": "cs-fix alias",
+        "test": "Run unit tests"
+    },
+    "support": {
+        "source": "https://github.com/codeigniter4/CodeIgniter4",
+        "slack": "https://codeigniterchat.slack.com"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        }
+    }
+}
