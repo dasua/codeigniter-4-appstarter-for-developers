@@ -127,6 +127,3 @@ nb-configuration.xml
 
 # phptan
 phpstan.neon
-
-# Codeigniter project
-!writable/.gitkeep
